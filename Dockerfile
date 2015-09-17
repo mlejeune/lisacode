@@ -14,20 +14,20 @@ RUN yum install -y gcc-c++
 ENV CXX c++
 
 #COPY contents of the Dockerfile in a specific conatiner dir (e.g. /opt/frontend)
-#COPY . /workspace
+COPY . /workspace
 
 
 RUN mkdir /workspace
 WORKDIR /workspace
 RUN cd /workspace
-#RUN git clone git@gitlab.in2p3.fr:mainetti/LISACode.git: -b tested --single-branch
+RUN git clone git@gitlab.in2p3.fr:mainetti/LISACode.git: -b master --single-branch
 #BUILD the eLISA code 
-#RUN cd /workspace/LISACode
-#RUN mkdir /workspace/LISACode/build
-#RUN cd /workspace/LISACode/build
+RUN cd /workspace/LISACode
+RUN mkdir /workspace/LISACode/build
+RUN cd /workspace/LISACode/build
 
-#RUN cmake ..
-#RUN make
-#RUN make install
+RUN cmake ..
+RUN make
+RUN make install
 
 
