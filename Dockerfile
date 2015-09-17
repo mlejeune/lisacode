@@ -21,6 +21,7 @@ RUN mkdir /workspace
 WORKDIR /workspace
 RUN cd /workspace
 RUN pwd
+RUN git config http.postBuffer 104857600
 RUN git clone https://gitlab.in2p3.fr/mainetti/LISACode.git -b tested --single-branch
 RUN cd /workspace/LISACode
 RUN mkdir /workspace/LISACode/build
