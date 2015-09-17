@@ -21,9 +21,10 @@ RUN mkdir /workspace
 WORKDIR /workspace
 RUN cd /workspace
 RUN pwd
-RUN git config --global --add core.compression -1
-RUN git clone https://gitlab.in2p3.fr/mainetti/LISACode.git -b tested --single-branch
-RUN cd /workspace/LISACode
+
+RUN git config --global --add core.compression 0
+RUN git clone --depth 1 https://gitlab.in2p3.fr/mainetti/LISACode.git -b tested --single-branch
+RUN cd /workspace/LISACode && git fetch --unshallow && git pull --all
 RUN mkdir /workspace/LISACode/build
 RUN cd /workspace/LISACode/build &&  cmake .. && make &&  make install 
 
