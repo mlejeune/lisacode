@@ -14,7 +14,7 @@ RUN yum install -y gcc-c++
 ENV CXX c++
 
 #COPY contents of the Dockerfile in a specific conatiner dir (e.g. /opt/frontend)
-#COPY . /workspace
+COPY . /workspace
 
 
 RUN mkdir /workspace
