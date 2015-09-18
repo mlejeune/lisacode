@@ -21,6 +21,10 @@ RUN mkdir /workspace
 WORKDIR /workspace
 RUN cd /workspace
 RUN pwd
+
+RUN git config --global http.postBuffer 524288000
+RUN git config --global --add core.compression -1
+
 RUN git clone https://gitlab.in2p3.fr/mainetti/LISACode.git -b master --single-branch
 RUN cd /workspace/LISACode
 RUN mkdir /workspace/LISACode/build
