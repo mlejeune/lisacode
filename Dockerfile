@@ -16,15 +16,18 @@ ENV CXX c++
 #COPY contents of the Dockerfile in a specific conatiner dir (e.g. /opt/frontend)
 #COPY . /workspace
 
-
 RUN mkdir /workspace
 WORKDIR /workspace
 RUN cd /workspace
 RUN pwd
 
-RUN git config --global --add core.compression 0
-RUN git clone --depth 1 https://gitlab.in2p3.fr/mainetti/LISACode.git -b tested --single-branch
-RUN cd /workspace/LISACode && git fetch --unshallow && git pull --all
+#RUN git config --global --add core.compression 0
+#
+RUN git config --global http.postBuffer 524288000
+RUN git config --global --add core.compression -1
+
+RUN git clone --mirror https://gitlab.in2p3.fr/mainetti/LISACode.git -b tested --single-branch
+RUN cd /workspace/LISACode
 RUN mkdir /workspace/LISACode/build
 RUN cd /workspace/LISACode/build &&  cmake .. && make &&  make install 
 
