@@ -30,4 +30,4 @@ RUN cd /workspace/LISACode
 RUN mkdir /workspace/LISACode/build
 RUN cd /workspace/LISACode/build &&  cmake .. && make &&  make install 
 
-
+RUN cd /workspace && mv LISACode/ LISACode_src/
