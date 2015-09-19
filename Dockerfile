@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM gabrimaine/elisadpc:latest
 MAINTAINER eLISA DPC mainetti@apc.in2p3.fr
 #EXPOSE 8085
 
