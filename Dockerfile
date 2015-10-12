@@ -17,5 +17,5 @@ RUN git clone  https://gitlab.in2p3.fr/elisadpc/LISACode.git -b tested --single-
 RUN cd /workspace/LISACode
 RUN mkdir /workspace/LISACode/build
 RUN cd /workspace/LISACode/build &&  cmake .. && make &&  make install 
-RUN cd /workspace/ && mv LISACode/ LISACode_src/
+RUN mkdir /LISACode_workspace && cd /workspace/LISACode && sh setWorkDir.sh /LISACode_workspace && cp -fr /workspace/LISACode/build/bin/* /LISACode_workspace/bin/
 
