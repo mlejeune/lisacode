@@ -4,10 +4,10 @@ MAINTAINER eLISA DPC mainetti@apc.in2p3.fr
 
 RUN git config --global http.postBuffer 524288000
 RUN git config --global --add core.compression -1
-
+RUN yum -y install numpy 
 RUN git clone https://gitlab.in2p3.fr/elisadpc/LISACode.git -b master --single-branch
 RUN cd /workspace/LISACode
 RUN mkdir /workspace/LISACode/build
 RUN cd /workspace/LISACode/build &&  cmake .. && make &&  make install 
+RUN mkdir /LISACode_workspace && cd /workspace/LISACode && sh setWorkDir.sh /LISACode_workspace && cp -fr /workspace/LISACode/build/bin/* /LISACode_workspace/bin/
 
-RUN cd /workspace && mv LISACode/ LISACode_src/
