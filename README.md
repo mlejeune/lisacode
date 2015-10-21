@@ -33,4 +33,4 @@ You can run link local directory to the container using the flag "-v" when you l
 
 	docker run -v /path/on/your/local/machine:/path/on/container -it gabrimaine/lisacode
 
-This command link a directory on your machine defined by the path: "/path/on/your/local/machine" with a directory within the container. If the container doesn't have this specific directory, a new directory will be careated. 
+This command link a directory on your machine defined by the path: "/path/on/your/local/machine" with a directory within the container. If the container doesn't have this specific directory, a new directory will be created. 
