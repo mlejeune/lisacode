@@ -21,7 +21,11 @@ Once installed Docker, you can use this image to run LISACode without install th
 NOTE: if "develop" tag  is not provided, by default Docker uses the version tagged as latest.
 
 Once executed the above commands, you will be logged-in in the container with the installed LISACode. 
+<<<<<<< HEAD
 LISACode configurations files are stored in /LISACode\_Cfg directory (note this dir could be changed). 
+=======
+LISACode configurations files are stored in /LISACode\_Cfg directory. 
+>>>>>>> remotes/origin/develop
 To test LISACode then you can simply execute:
 	
 	cd /LISACode_Cfg
