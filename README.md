@@ -15,8 +15,8 @@ Once installed Docker, you can use this image to run LISACode without install th
 
 #####Basic usage
 
-	docker pull gabrimaine/lisacode:develop
-	docker run -it gabrimaine/lisacode:develop
+	docker pull elisadpc/lisacode:develop
+	docker run -it elisadpc/lisacode:develop
 
 NOTE: if "develop" tag  is not provided, by default Docker uses the version tagged as latest.
 
@@ -31,6 +31,6 @@ To test LISACode then you can simply execute:
 
 You can run link local directory to the container using the flag "-v" when you launch docker run:
 
-	docker run -v /path/on/your/local/machine:/path/on/container -it gabrimaine/lisacode
+	docker run -v /path/on/your/local/machine:/path/on/container -it elisadpc/lisacode
 
 This command link a directory on your machine defined by the path: "/path/on/your/local/machine" with a directory within the container. If the container doesn't have this specific directory, a new directory will be created. 
