@@ -8,6 +8,10 @@ RUN pwd
 RUN git config --global http.postBuffer 524288000
 RUN git config --global --add core.compression -1
 RUN git clone  https://gitlab.in2p3.fr/elisadpc/LISACode.git -b tested --single-branch
-RUN cd /workspace/LISACode && ls -l && sh install.sh -c /usr/Cfg
+RUN cd /workspace/LISACode && ls -l
+RUN mkdir /workspace/LISACode/cmake_build && cd /workspace/LISACode/cmake_build
+RUN cmake -D LC_LIB=/usr/lib -D LC_BIN=/usr/bin -D LC_CFG=/usr/Cfg ..
+RUN make && make install
 RUN cd /workspace && rm -fr LISACode
 RUN chmod +x /usr/local/bin/makeTDI-lisacode2.py
+
