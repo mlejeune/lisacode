@@ -12,6 +12,5 @@ RUN cd /workspace/LISACode && ls -l
 RUN mkdir /workspace/LISACode/cmake_build && cd /workspace/LISACode/cmake_build
 RUN cmake -D LC_LIB=/usr/lib -D LC_BIN=/usr/bin -D LC_CFG=/usr/Cfg /workspace/LISACode/
 RUN make && make install
-RUN cd /workspace && rm -fr LISACode
 RUN chmod +x /usr/bin/makeTDI-lisacode2.py
 
