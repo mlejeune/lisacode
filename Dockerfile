@@ -17,5 +17,5 @@ RUN make && make install
 RUN chmod +x /usr/bin/makeTDI-lisacode2.py
 
 WORKDIR /workspace
-RUN cd /workspace
+RUN cd /workspace && rm -fr LISACode
 RUN pwd
