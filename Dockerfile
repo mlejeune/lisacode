@@ -3,7 +3,7 @@ MAINTAINER eLISA DPC ccavet@apc.in2p3.fr
 
 WORKDIR /workspace
 RUN cd /workspace
-RUN pwd
+RUN pwd 
 
 RUN git config --global http.postBuffer 524288000
 RUN git config --global --add core.compression -1
